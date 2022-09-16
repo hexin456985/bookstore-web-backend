@@ -1,4 +1,4 @@
-package com.bookstore_web_backend.service.impl;
+package com.bookstore_web_backend.service;
 
-public interface BookInfoServiceImpl {
+public interface BookInfoService {
 }

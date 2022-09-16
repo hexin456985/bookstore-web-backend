@@ -23,7 +23,7 @@
     </option>
   </component>
   <component name="DatabaseSettingsState">
-    <option name="database" value="old_book_circulation_system" />
+    <option name="database" value="bookstore_web" />
     <option name="driverClass" value="com.mysql.cj.jdbc.Driver" />
     <option name="driverPath" value="C:\Users\朱允怀\.m2\repository\mysql\mysql-connector-java\8.0.16\mysql-connector-java-8.0.16.jar" />
     <option name="url" value="jdbc:mysql://{host}:{port}/{database}?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8" />

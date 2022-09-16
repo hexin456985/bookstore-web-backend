@@ -1,4 +1,4 @@
 package com.bookstore_web_backend.service;
 
-public interface BookWithCategoryServiceImpl {
+public interface BookWithCategoryService {
 }
