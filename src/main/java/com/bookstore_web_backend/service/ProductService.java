@@ -1,4 +1,4 @@
-package com.bookstore_web_backend.service.impl;
+package com.bookstore_web_backend.service;
 
-public class ProductService {
+public interface ProductServiceImpl1 {
 }

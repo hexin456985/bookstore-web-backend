@@ -1,4 +1,6 @@
-package com.bookstore_web_backend.service.impl;
+package com.bookstore_web_backend.service;
 
-public class UserInfoService {
+public interface UserInfoServiceImpl1 {
+
+
 }

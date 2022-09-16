@@ -1,4 +1,4 @@
-package com.bookstore_web_backend.service;
+package com.bookstore_web_backend.service.impl;
 
-public interface BookCategoryInfoImpl {
+public class BookCategoryInfoService {
 }
