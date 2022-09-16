@@ -38,8 +38,15 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Optional<Product> findProduct (int productId) {
-        Optional<Product> product = productRepository.findById(productId);
+    public Product findProduct (int productId) {
+        Product product = null;
+        Optional<Product> optional = productRepository.findById(productId);
+        if (optional.isPresent()) {
+            product = optional.get();
+        }
+        else {
+            throw new RuntimeException("Product not found for id: " + productId);
+        }
         return product;
     }
     

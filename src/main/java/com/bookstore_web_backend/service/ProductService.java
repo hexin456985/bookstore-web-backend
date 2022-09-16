@@ -9,6 +9,6 @@ import java.util.List;
 public interface ProductService {
     public Product insertProduct (int productId, int book_id, int seller_id, String product_description, BigDecimal productPrice);
     public void deleteProduct (int productId);
-    public Optional<Product> findProduct (int productId);
+    public Product findProduct (int productId);
     public List<Product> findAllProduct ();
 }

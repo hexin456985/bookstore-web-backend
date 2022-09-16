@@ -1,5 +1,6 @@
 package com.bookstore_web_backend.service.impl;
 
+import com.bookstore_web_backend.entity.Product;
 import com.bookstore_web_backend.service.UserInfoService;
 import com.bookstore_web_backend.dao.UserInfoRepository;
 import com.bookstore_web_backend.entity.UserInfo;
@@ -36,8 +37,15 @@ public class UserInfoServiceImpl implements UserInfoService {
     }
 
     @Override
-    public Optional<UserInfo> findUserInfo (int userId) {
-        Optional<UserInfo> userInfo = userInfoRepository.findById(userId);
+    public UserInfo findUserInfo (int userId) {
+        UserInfo userInfo = null;
+        Optional<UserInfo> optional = userInfoRepository.findById(userId);
+        if (optional.isPresent()) {
+            userInfo = optional.get();
+        }
+        else {
+            throw new RuntimeException("User not found for id: " + userId);
+        }
         return userInfo;
     }
 
