@@ -1,13 +1,14 @@
 package com.bookstore_web_backend.service;
 
-import com.bookstore_web_backend.entity.UserInfo;
+import com.bookstore_web_backend.entity.Userinfo;
 
-import java.util.Optional;
 import java.util.List;
 
+
 public interface UserInfoService {
-    public UserInfo insertUserInfo (int userId, String userNames, String userPassword, String userEmail);
+    public Userinfo insertUserInfo (int userId, String userNames, String userPassword, String userEmail);
     public void deleteUserInfo (int userId);
-    public UserInfo findUserInfo (int userId);
-    public List<UserInfo> findAllUserInfo ();
+    public void deleteAllUserInfo();
+    public Userinfo findUserInfo (int userId);
+    public List<Userinfo> findAllUserInfo ();
 }

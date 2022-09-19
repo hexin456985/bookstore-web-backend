@@ -14,19 +14,20 @@ public class Product implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @Column(name = "product_id", nullable = false)
+    @Column(name = "productId", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer productId;
 
-    @Column(name = "book_id", nullable = false)
+    @Column(name = "bookId", nullable = false)
     private Integer bookId;
 
-    @Column(name = "seller_id", nullable = false)
+    @Column(name = "sellerId", nullable = false)
     private Integer sellerId;
 
-    @Column(name = "product_description")
+    @Column(name = "productDescription")
     private String productDescription;
 
-    @Column(name = "product_price", nullable = false)
+    @Column(name = "productPrice", nullable = false)
     private BigDecimal productPrice;
+
 }

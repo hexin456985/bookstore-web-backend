@@ -8,25 +8,26 @@ import java.math.BigDecimal;
 
 @Data
 @Entity
-@Table(name = "book_info")
-public class BookInfo implements Serializable {
+@Table(name = "bookinfo")
+public class Bookinfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
-    @Column(name = "book_id", nullable = false)
+    @Column(name = "bookId", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer bookId;
 
-    @Column(name = "book_price", nullable = false)
+    @Column(name = "bookPrice", nullable = false)
     private BigDecimal bookPrice;
 
-    @Column(name = "book_names", nullable = false)
+    @Column(name = "bookNames", nullable = false)
     private String bookNames;
 
-    @Column(name = "book_author", nullable = false)
+    @Column(name = "bookAuthor", nullable = false)
     private String bookAuthor;
 
-    @Column(name = "book_description")
+    @Column(name = "bookDescription")
     private String bookDescription;
+
 }

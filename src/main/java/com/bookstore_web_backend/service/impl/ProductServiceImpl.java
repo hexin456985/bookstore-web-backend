@@ -1,12 +1,12 @@
 package com.bookstore_web_backend.service.impl;
 
-import com.bookstore_web_backend.entity.Product;
-import com.bookstore_web_backend.dao.ProductRepository;
-
 import com.bookstore_web_backend.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.bookstore_web_backend.entity.Product;
+import com.bookstore_web_backend.dao.ProductRepository;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -49,7 +49,12 @@ public class ProductServiceImpl implements ProductService {
         }
         return product;
     }
-    
+
+    @Override
+    public void deleteAllProduct() {
+        productRepository.deleteAll();
+    }
+
     @Override
     public List<Product> findAllProduct () {
         List<Product> List_product = productRepository.findAll();

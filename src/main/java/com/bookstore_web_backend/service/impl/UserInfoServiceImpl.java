@@ -1,9 +1,8 @@
 package com.bookstore_web_backend.service.impl;
 
-import com.bookstore_web_backend.entity.Product;
 import com.bookstore_web_backend.service.UserInfoService;
-import com.bookstore_web_backend.dao.UserInfoRepository;
-import com.bookstore_web_backend.entity.UserInfo;
+import com.bookstore_web_backend.dao.UserinfoRepository;
+import com.bookstore_web_backend.entity.Userinfo;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,11 +15,11 @@ import java.util.List;
 @Transactional
 public class UserInfoServiceImpl implements UserInfoService {
     @Autowired
-    UserInfoRepository userInfoRepository;
+    UserinfoRepository userInfoRepository;
 
     @Override
-    public UserInfo insertUserInfo (int userId, String userNames, String userPassword, String userEmail) {
-        UserInfo userInfo = new UserInfo();
+    public Userinfo insertUserInfo (int userId, String userNames, String userPassword, String userEmail) {
+        Userinfo userInfo = new Userinfo();
 
         userInfo.setUserId(userId);
         userInfo.setUserNames(userNames);
@@ -37,9 +36,9 @@ public class UserInfoServiceImpl implements UserInfoService {
     }
 
     @Override
-    public UserInfo findUserInfo (int userId) {
-        UserInfo userInfo = null;
-        Optional<UserInfo> optional = userInfoRepository.findById(userId);
+    public Userinfo findUserInfo (int userId) {
+        Userinfo userInfo = null;
+        Optional<Userinfo> optional = userInfoRepository.findById(userId);
         if (optional.isPresent()) {
             userInfo = optional.get();
         }
@@ -50,8 +49,13 @@ public class UserInfoServiceImpl implements UserInfoService {
     }
 
     @Override
-    public List<UserInfo> findAllUserInfo () {
-        List<UserInfo> List_userInfo = userInfoRepository.findAll();
+    public void deleteAllUserInfo() {
+        userInfoRepository.deleteAll();
+    }
+
+    @Override
+    public List<Userinfo> findAllUserInfo () {
+        List<Userinfo> List_userInfo = userInfoRepository.findAll();
         return List_userInfo;
     }
 }
