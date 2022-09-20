@@ -19,13 +19,13 @@ public class LoginController {
     private UserInfoServiceImpl userInfoService;
 
     @GetMapping("/login")
-    public String login(Model model) {
+    public String Login(Model model) {
         model.addAttribute("userinfo", new Userinfo());
         return "user_login";
     }
 
     @PostMapping("/login")
-    public String login(@ModelAttribute("user") Userinfo userinfo) {
+    public String Login(@ModelAttribute("user") Userinfo userinfo) {
         if (userInfoRepository.findByUserEmail(userinfo.getUserEmail()) == null) {
             return "login";
         }
