@@ -21,3 +21,4 @@
 
 **認證頁面（後端）**
 * [Spring Boot + Spring Security + Thymeleaf 简单教程](https://juejin.cn/post/6844903765342945287/)
+* [實現demo](https://github.com/Smith-Cruise/Spring-Boot-Security-Thymeleaf-Demo)
