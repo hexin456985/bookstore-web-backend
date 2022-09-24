@@ -22,7 +22,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	private final String SECRET_KEY = "123456";
 
 	@Autowired
-	private UserService userService;
+	private UserInfoService userService;
 	
 	@Bean
     public BCryptPasswordEncoder passwordEncoder() {
@@ -69,7 +69,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 	
 	private TokenBasedRememberMeServices getRememberMeServices() {
-        TokenBasedRememberMeServices services = new TokenBasedRememberMeServices(SECRET_KEY, customUserDetailsService);
+        TokenBasedRememberMeServices services = new TokenBasedRememberMeServices(SECRET_KEY, userService);
         services.setCookieName("remember-cookie");
         services.setTokenValiditySeconds(100); 
         return services;
